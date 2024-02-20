@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp2
+
 {
     class Program
     {
@@ -35,20 +36,34 @@ namespace ConsoleApp2
                 Console.WriteLine("Некорректное значение c. Введите корректное значение.");
                 continue;
             }
-            if (x == 0 && b != 0)
+            if (x < 3 && b != 0)
             {
-                y = a * Math.Pow((x + c), 2) - b;
+                y = a * Math.Pow(x, 2) - b * x + c;
                 Console.WriteLine($"y = {y}");
             }
-            else if (x == 0 && b == 0)
+            else if (x > 0 && b == 0)
             {
-                y = (x - a)/(-c);
-                Console.WriteLine($"y = {y}");
+                if (x == c)
+                {
+                    Console.WriteLine("Знаменатель равен 0, так как х = с. Деление на 0 невозможно.");
+                }
+                else
+                {
+                    y = (x - a) / (x - c);
+                    Console.WriteLine($"y = {y}");
+                }
             }
             else
             {
-                y = a + x/c;
-                Console.WriteLine($"y = {y}");
+                if (c == 0)
+                {
+                    Console.WriteLine("C равен 0. Деление на 0 невозможно.");
+                }
+                else
+                {
+                    y = x / c;
+                    Console.WriteLine($"y = {y}");
+                }
             }
             Console.ReadKey();
         }
