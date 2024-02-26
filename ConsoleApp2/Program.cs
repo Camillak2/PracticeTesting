@@ -36,6 +36,7 @@ namespace ConsoleApp2
                 Console.WriteLine("Некорректное значение c. Введите корректное значение.");
                 continue;
             }
+
             if (x < 3 && b != 0)
             {
                 y = a * Math.Pow(x, 2) - b * x + c;
